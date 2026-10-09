@@ -1,0 +1,11 @@
+<CommunityApplications>
+  <Profile>
+Apps by Alex Stevenson-Price.
+
+- **Slipmat**: self-hosted control and automation for Sonos. A web UI for everyday playback and grouping, plus presets that group speakers, set their volumes and shuffle several playlists together, started from the UI, webhooks, schedules or HomeKit.
+
+For help, bug reports and feature requests, open an issue on the app's GitHub repository.
+  </Profile>
+  <Icon>https://raw.githubusercontent.com/alexjsp/unraid-community-apps/main/icon.svg</Icon>
+  <WebPage>https://github.com/alexjsp/unraid-community-apps</WebPage>
+</CommunityApplications>
