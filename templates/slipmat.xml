@@ -14,7 +14,7 @@
   <WebUI>http://[IP]:[PORT:5544]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/alexjsp/unraid-community-apps/main/templates/slipmat.xml</TemplateURL>
   <ReadMe>https://raw.githubusercontent.com/alexjsp/slipmat/main/README.md</ReadMe>
-  <Icon>https://raw.githubusercontent.com/alexjsp/slipmat/main/packages/web/public/apple-touch-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/alexjsp/unraid-community-apps/main/icon.png</Icon>
   <ExtraSearchTerms>sonos speakers multiroom audio homekit presets</ExtraSearchTerms>
   <License>MIT</License>
   <Changes>Initial release</Changes>
