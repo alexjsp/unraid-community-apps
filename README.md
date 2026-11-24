@@ -6,14 +6,17 @@ Unraid templates for apps by Alex Stevenson-Price, published through
 | App | Template | Project |
 | --- | --- | --- |
 | Slipmat | [`templates/slipmat.xml`](templates/slipmat.xml) | [alexjsp/slipmat](https://github.com/alexjsp/slipmat) |
+| Tezca | [`templates/tezca.xml`](templates/tezca.xml) | [alexjsp/tezca-obsidian-sync](https://github.com/alexjsp/tezca-obsidian-sync) |
 
 ## Installing before an app is listed
 
-Fetch the template on the server, then pick it from **Docker → Add Container → Template**:
+Fetch the template for the app you want on the server, then pick it from **Docker → Add Container → Template**:
 
 ```sh
 wget -O /boot/config/plugins/dockerMan/templates-user/my-Slipmat.xml \
   https://raw.githubusercontent.com/alexjsp/unraid-community-apps/main/templates/slipmat.xml
+wget -O /boot/config/plugins/dockerMan/templates-user/my-Tezca.xml \
+  https://raw.githubusercontent.com/alexjsp/unraid-community-apps/main/templates/tezca.xml
 ```
 
 ## Support

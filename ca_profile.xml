@@ -3,6 +3,7 @@
 Apps by Alex Stevenson-Price.
 
 - **Slipmat**: self-hosted control and automation for Sonos. A web UI for everyday playback and grouping, plus presets that group speakers, set their volumes and shuffle several playlists together, started from the UI, webhooks, schedules or HomeKit.
+- **Tezca**: self-hosted, live, end-to-end encrypted sync for Obsidian, with shared folders you can edit together in real time. The server only ever stores encrypted data; the Obsidian plugin installs through BRAT.
 
 For help, bug reports and feature requests, open an issue on the app's GitHub repository.
   </Profile>

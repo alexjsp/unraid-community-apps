@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Tezca</Name>
+  <Repository>ghcr.io/alexjsp/tezca-server:latest</Repository>
+  <Registry>https://github.com/alexjsp/tezca-obsidian-sync/pkgs/container/tezca-server</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/alexjsp/tezca-obsidian-sync/issues</Support>
+  <Project>https://github.com/alexjsp/tezca-obsidian-sync</Project>
+  <Overview>Tezca is a self-hosted sync server for Obsidian: live, end-to-end encrypted sync between your devices, and shared folders you can edit together in real time. The server only ever stores encrypted data.[br][br]Set Public URL to the address your devices will use (Obsidian on phones needs HTTPS, so put it behind a reverse proxy such as Nginx Proxy Manager, or use Tailscale). After the first start, open the WebUI to see how to claim the server: the claim link is in the container's log. Install the Tezca plugin in Obsidian with BRAT (alexjsp/tezca-obsidian-sync).</Overview>
+  <Category>Productivity: Cloud: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/alexjsp/unraid-community-apps/main/templates/tezca.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/alexjsp/tezca-obsidian-sync/main/assets/icon.png</Icon>
+  <ReadMe>https://github.com/alexjsp/tezca-obsidian-sync#readme</ReadMe>
+  <ExtraSearchTerms>obsidian sync notes markdown e2ee encrypted collaboration self-hosted livesync</ExtraSearchTerms>
+  <License>MIT</License>
+  <MinVer>6.12.0</MinVer>
+  <Date>2026-11-24</Date>
+  <Changes>### 0.4.0
+- Recovery key, offline recovery script, longer edit history and many fixes.
+### 0.3.3
+- First Unraid template. Runs as nobody:users (PUID 99 / PGID 100) with data in /mnt/user/appdata/tezca.</Changes>
+  <ExtraParams>--user 0:0</ExtraParams>
+  <PostArgs/>
+  <Requires>A domain name with HTTPS (for example through Nginx Proxy Manager, Cloudflare Tunnel or Tailscale) if you want to sync phones and tablets.</Requires>
+  <Config Name="WebUI / sync port" Target="8080" Default="8089" Mode="tcp" Description="Port the server listens on. Point your reverse proxy here (WebSockets on /ws must be allowed)." Type="Port" Display="always" Required="true" Mask="false">8089</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/tezca" Mode="rw" Description="Database and (encrypted) attachments. Back this folder up." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tezca</Config>
+  <Config Name="Public URL" Target="TEZCA_PUBLIC_URL" Default="" Mode="" Description="The address your devices use to reach this server, e.g. https://notes.example.com. It goes into claim and invite links." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Server name" Target="TEZCA_SERVER_NAME" Default="Tezca" Mode="" Description="Shown on the server's web pages and in invites." Type="Variable" Display="always" Required="false" Mask="false">Tezca</Config>
+  <Config Name="Largest attachment (MB)" Target="TEZCA_MAX_BLOB_MB" Default="100" Mode="" Description="Files bigger than this don't sync. If you use a reverse proxy, allow request bodies a little bigger than this." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Guest storage (MB)" Target="TEZCA_GUEST_QUOTA_MB" Default="1024" Mode="" Description="How much storage (attachments and note edits) each guest (someone who joined a shared folder without an account here) may use. 0 = unlimited." Type="Variable" Display="advanced" Required="false" Mask="false">1024</Config>
+  <Config Name="History (days)" Target="TEZCA_HISTORY_DAYS" Default="30" Mode="" Description="How long note history (versions and the edit log) is kept." Type="Variable" Display="advanced" Required="false" Mask="false">30</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User the server runs as (it owns the data folder). 99 = nobody." Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group the server runs as. 100 = users." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>
